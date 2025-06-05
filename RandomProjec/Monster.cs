@@ -13,7 +13,6 @@ namespace RandomProjec
         public Random rand = new Random(); //Random for this class
         protected string name { get; set; }
         protected string type { get; set; }
-        protected double health { get; set; }
         protected double damage { get; set; }
 
         protected double defense { get; set; }
@@ -21,6 +20,8 @@ namespace RandomProjec
         protected int speed { get; set; }
 
         public Hero TargetHero { get; set; }
+
+
 
         public Monster(Hero hero)
         {
@@ -45,11 +46,13 @@ namespace RandomProjec
             set { defense = value; }
         }
 
+        protected double health;
         public double Health
         {
             get { return health; }
             set { health = value; }
         }
+
         public void Attack(Hero hero)
         {
 
@@ -65,10 +68,14 @@ namespace RandomProjec
         }
 
 
-        public void takeDamage(double damage)
+        public void takeDamage(double incomingDamage)
         {
-            health -= damage;
+            double mitigated = Math.Max(1, incomingDamage - defense);
+            health -= mitigated;
+            Console.WriteLine($"Monster takes {mitigated} damage after mitigation. Health is now {health}");
         }
+
+
 
 
     }
@@ -83,8 +90,8 @@ namespace RandomProjec
         public Goblin(Hero hero) : base(hero)
         {
             this.weapon = goblinWeapons[rand.Next(goblinWeapons.Length)];
-            this.health = 10;
-            this.damage = 3;
+            this.health = 5;
+            this.damage = 5;
             this.defense = 2;
             this.accuracy = 0.8;
             this.speed = 0;
@@ -102,8 +109,8 @@ namespace RandomProjec
         {
             this.weapon = orcArmors[rand.Next(orcArmors.Length)];
             this.armor = orcWeapons[rand.Next(orcWeapons.Length)];
-            this.health = 15;
-            this.damage = 4;
+            this.health = 10;
+            this.damage = 8;
             this.defense = 3;
             this.accuracy = 0.75;
             this.speed = 0;
@@ -120,8 +127,8 @@ namespace RandomProjec
         public Wyrmling(Hero hero) : base(hero)
         {
             this.type = types[rand.Next(types.Length)];
-            this.health = 20;
-            this.damage = 5;
+            this.health = 15;
+            this.damage = 12;
             this.defense = 4;
             this.accuracy = 0.7;
             this.speed = 0;
@@ -166,8 +173,19 @@ namespace RandomProjec
         public Monster getRandomMonster()
         {
             int index = random.Next(monsters.Count);
-            return monsters[index];
+            // instead of returning the same instance, create a new monster each time:
+            Monster monsterToClone = monsters[index];
+
+            if (monsterToClone is Goblin)
+                return new Goblin(hero);
+            else if (monsterToClone is Orc)
+                return new Orc(hero);
+            else if (monsterToClone is Wyrmling)
+                return new Wyrmling(hero);
+            else
+                return monsterToClone; // fallback
         }
+
     }
 
 }

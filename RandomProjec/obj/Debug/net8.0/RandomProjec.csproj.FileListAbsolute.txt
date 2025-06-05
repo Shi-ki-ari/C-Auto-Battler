@@ -12,3 +12,17 @@ C:\Users\User\source\repos\RandomProjec\RandomProjec\obj\Debug\net8.0\refint\Ran
 C:\Users\User\source\repos\RandomProjec\RandomProjec\obj\Debug\net8.0\RandomProjec.pdb
 C:\Users\User\source\repos\RandomProjec\RandomProjec\obj\Debug\net8.0\RandomProjec.genruntimeconfig.cache
 C:\Users\User\source\repos\RandomProjec\RandomProjec\obj\Debug\net8.0\ref\RandomProjec.dll
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\bin\Debug\net8.0\RandomProjec.exe
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\bin\Debug\net8.0\RandomProjec.deps.json
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\bin\Debug\net8.0\RandomProjec.runtimeconfig.json
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\bin\Debug\net8.0\RandomProjec.dll
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\bin\Debug\net8.0\RandomProjec.pdb
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\obj\Debug\net8.0\RandomProjec.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\obj\Debug\net8.0\RandomProjec.AssemblyInfoInputs.cache
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\obj\Debug\net8.0\RandomProjec.AssemblyInfo.cs
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\obj\Debug\net8.0\RandomProjec.csproj.CoreCompileInputs.cache
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\obj\Debug\net8.0\RandomProjec.dll
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\obj\Debug\net8.0\refint\RandomProjec.dll
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\obj\Debug\net8.0\RandomProjec.pdb
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\obj\Debug\net8.0\RandomProjec.genruntimeconfig.cache
+C:\Users\Tewodor\Desktop\C-Auto-Battler-main\C-Auto-Battler-main\RandomProjec\obj\Debug\net8.0\ref\RandomProjec.dll

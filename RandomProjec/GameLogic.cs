@@ -8,40 +8,62 @@ namespace RandomProjec
 {
     public class GameLogic
     {
+        private MonsterFactory monsterFactory;
+
         private Hero hero;
-        private Monster monster;
+        private Monster monster {  get; set; }
         private bool isGameOver;
         private bool isHeroTurn;
         private bool inCombat = true;
 
-
         public GameLogic()
         {
             this.hero = new Hero();
-            this.monster = new Monster(hero);
+            this.monsterFactory = new MonsterFactory(hero);
+            this.monster = monsterFactory.getRandomMonster(); 
         }
+
 
         public void StartGame()
         {
 
             while (!isGameOver)
             {
+                initiativeRoll(hero, monster);
+                switch (monster)
+                {
+                    case Goblin goblin:
+                        Console.WriteLine("It's a pathetic Goblin!");
+                        break;
+
+                    case Orc orc:
+                        Console.WriteLine("It's a fearsome Orc!");
+                        break;
+
+                    case Wyrmling wyrmling:
+                        Console.WriteLine("It's a mighty Wyrmling!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Unknown monster type");
+                        break;
+                }
                 while (inCombat)
                 {
-                    initiativeRoll(hero, monster);
+
                     //Combat
                     if (isHeroTurn)
                     {
                         Console.WriteLine("Hero's turn");
                         hero.Attack(monster);
-                        System.Threading.Thread.Sleep(2000);
+                        System.Threading.Thread.Sleep(4000);
                         isHeroTurn = false;
                     }
                     else
                     {
                         Console.WriteLine("Monster's turn");
                         monster.Attack(hero);
-                        System.Threading.Thread.Sleep(2000);
+                        System.Threading.Thread.Sleep(4000);
                         isHeroTurn = true;
                     }
 
@@ -53,14 +75,18 @@ namespace RandomProjec
                     {
                         Console.WriteLine("The hero is victorious");
                         Console.WriteLine($"The hero has {hero.Health} health left");
-                        hero.Health += 5; // Heal the hero for 5 health
-                        if (hero.Health > hero.MaxHealth) // 
+                        hero.Health += 5;
+                        if (hero.Health > hero.MaxHealth)
                         {
-                            hero.Health = hero.MaxHealth; // Cap the health at max
+                            hero.Health = hero.MaxHealth;
                         }
-                        Console.WriteLine("Hero heals for 5 health");
+                        Console.WriteLine($"Hero heals for 5 health and has {hero.Health} health");
+
+                        // Spawn new monster for next round
+                        monster = monsterFactory.getRandomMonster();
                         break;
                     }
+
                 }
 
                 //Pick level up;
@@ -75,6 +101,8 @@ namespace RandomProjec
                         break;
                     case "2":
                         hero.MaxHealth += 3;
+                        hero.Health += 3; 
+
                         Console.WriteLine("Hero health increased by 3");
                         break;
 
@@ -91,25 +119,26 @@ namespace RandomProjec
 
         public void initiativeRoll(Hero hero, Monster monster)
         {
-            int heroRoll = new Random().Next(1, 21) + hero.Speed;   
-            int monsterRoll = new Random().Next(1, 21) + monster.Speed;
 
-            if (heroRoll > monsterRoll)
-            {
-                Console.WriteLine("Hero goes first!");
-                isHeroTurn = true;
-            }
-            else if (monsterRoll > heroRoll)
-            {
-                Console.WriteLine("Monster goes first!");
-                isHeroTurn = false;
-            }
-            else
-            {
-                Console.WriteLine("It's a tie! Roll again.");
-                initiativeRoll(hero, monster);
-            }
+                int heroRoll = new Random().Next(1, 21) + hero.Speed;
+                int monsterRoll = new Random().Next(1, 21) + monster.Speed;
 
+                if (heroRoll > monsterRoll)
+                {
+                    Console.WriteLine("Hero goes first!");
+                    isHeroTurn = true;
+                }
+                else if (monsterRoll > heroRoll)
+                {
+                    Console.WriteLine("Monster goes first!");
+                    isHeroTurn = false;
+                }
+                else
+                {
+                    Console.WriteLine("It's a tie! Rolling again...");
+                }
+            return;
         }
+
     }
 }

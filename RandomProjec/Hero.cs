@@ -16,7 +16,6 @@ namespace RandomProjec
         private double accuracy { get; set; }
         private int level { get; set; }
         private int speed;
-        private int maxHealth;
 
         public double Damage
         {
@@ -34,11 +33,15 @@ namespace RandomProjec
             set { health = value; }
         }
 
+        private int maxHealth;
+
         public int MaxHealth
         {
-            get { return MaxHealth; }
-            set { MaxHealth = value; }
+            get { return maxHealth; }
+            set { maxHealth = value; }
         }
+
+
 
         public int Speed
         {
@@ -51,16 +54,20 @@ namespace RandomProjec
             get { return level; }
             set { level = value; }
         }
-        public void takeDamage(double damage)
+        public void takeDamage(double incomingDamage)
         {
-            health -= damage;
+            double mitigated = Math.Max(1, incomingDamage - defense);
+            health -= mitigated;
+            Console.WriteLine($"Hero takes {mitigated} damage after mitigation. Health is now {health}");
         }
+
 
         public Hero()
         {
-            this.damage = 5;
+            this.damage = 8;
             this.defense = 6;
             this.health = 20;
+            this.maxHealth = 20;
             this.accuracy = 1; 
             this.level = 1;
             this.speed = 1;

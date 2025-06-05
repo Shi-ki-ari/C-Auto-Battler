@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\RandomProjec\\RandomProjec\\RandomProjec.csproj": {}
+    "C:\\Users\\Tewodor\\Desktop\\C-Auto-Battler-main\\C-Auto-Battler-main\\RandomProjec\\RandomProjec.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\RandomProjec\\RandomProjec\\RandomProjec.csproj": {
+    "C:\\Users\\Tewodor\\Desktop\\C-Auto-Battler-main\\C-Auto-Battler-main\\RandomProjec\\RandomProjec.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\RandomProjec\\RandomProjec\\RandomProjec.csproj",
+        "projectUniqueName": "C:\\Users\\Tewodor\\Desktop\\C-Auto-Battler-main\\C-Auto-Battler-main\\RandomProjec\\RandomProjec.csproj",
         "projectName": "RandomProjec",
-        "projectPath": "C:\\Users\\User\\source\\repos\\RandomProjec\\RandomProjec\\RandomProjec.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\RandomProjec\\RandomProjec\\obj\\",
+        "projectPath": "C:\\Users\\Tewodor\\Desktop\\C-Auto-Battler-main\\C-Auto-Battler-main\\RandomProjec\\RandomProjec.csproj",
+        "packagesPath": "C:\\Users\\Tewodor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tewodor\\Desktop\\C-Auto-Battler-main\\C-Auto-Battler-main\\RandomProjec\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Tewodor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
